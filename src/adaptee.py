@@ -48,6 +48,25 @@ class Decoder:
         self._cv = cv
 
     def decode(self, chromosome: BaseChromosome, rewrite: bool) -> float:
+        """
+        Definição da decodificação, o qual usa como parâmetro o cromossomo base  variável cromossomo e a variável booleana de escrita. 
+        O método retorna o resultado da função de avaliação para um dado cromossomo.
+        
+        Parameters
+        
+        ----------
+        chromosome: BaseChromosome
+        <<DFINIR O QUE É ESSE PARÂMETRO>>
+        
+        rewrite:bool
+        <<DEFINIR O QUE É ESSE PARÂMETRO>>
+        
+        Returns
+        
+        -------
+        score:float
+        resultado da função de avaliação para o cromossomo
+        """
         return self.score(self.encoder(chromosome))
 
     def encoder(self, chromosome: BaseChromosome) -> dict:
