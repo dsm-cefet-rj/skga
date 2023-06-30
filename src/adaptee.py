@@ -39,7 +39,7 @@ class Decoder:
     or have no effect. See the examples below.
     """
 
-    def __init__(self, parameters: dict, estimator: float, X: float, y: float, cv: dict):
+    def __init__(self, parameters: dict, estimator: dict, X: float, y: float, cv: dict):
         self._parameters = parameters
         self._estimator = estimator
         self._X = X
