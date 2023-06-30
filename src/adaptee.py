@@ -39,7 +39,7 @@ class Decoder:
     or have no effect. See the examples below.
     """
 
-    def __init__(self, parameters, estimator, X, y, cv):
+    def __init__(self, parameters: dict, estimator: float, X: float, y: float, cv: dict):
         self._parameters = parameters
         self._estimator = estimator
         self._X = X
@@ -216,7 +216,7 @@ class HyperBRKGASearchCV(BaseSearchCV):
         cv_orig = check_cv(self.cv, y, classifier=is_classifier(estimator))
         n_splits = cv_orig.get_n_splits(X, y, groups)
 
-        def evaluate_candidates(candidate_params, cv=None, more_results=None):
+        def evaluate_candidates(candidate_params: dict, cv=None, more_results=None):
         """
         A classe de avaliação dos candidatos. Nele,os cromossomos são avaliados para encontrar potencias candidatos,
         levando-se em consideração os parâmetros de candidatos, a inexistência de valores no cv ou inexistência de mais resultados.
@@ -295,7 +295,7 @@ class HyperBRKGASearchCV(BaseSearchCV):
 
         return self
 
-    def _run_search(self, evaluate_candidates):
+    def _run_search(self, evaluate_candidates: dict):
         """
         A última classe do HyperBrkgaCV,cujo proósito é rodar a busca. Para isso, so era preciso avaliar o candidatos, 
         usando como parâmetro a grade de parâmetros do self
